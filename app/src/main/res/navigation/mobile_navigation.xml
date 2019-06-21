@@ -5,26 +5,25 @@
             android:id="@+id/mobile_navigation"
             app:startDestination="@id/tenantRequestFragment">
 
+    <fragment android:id="@+id/tenantRequestFragment"
+              android:name="com.example.samplelogin.mainmenu.work.tenantrequest.TenantRequestFragment"
+              android:label="Tenant Request"
+              tools:layout="@layout/tenant_request_fragment">
+    </fragment>
+    <fragment android:id="@+id/preventiveMaintenanceFragment"
+              android:name="com.example.samplelogin.mainmenu.work.preventivemaintenance.PreventiveMaintenanceFragment"
+              android:label="Preventive Maintenance"
+              tools:layout="@layout/preventive_maintenance_fragment">
+    </fragment>
 
-    <fragment
-            android:id="@+id/tenantRequestFragment"
-            android:name="com.example.samplelogin.mainmenu.work.tenantrequest.TenantRequestFragment"
-            android:label="Tenant Requests"
-            tools:layout="@layout/tenant_request_fragment"/>
+    <fragment android:id="@+id/inspectionsFragment"
+              android:name="com.example.samplelogin.mainmenu.work.inspections.InspectionsFragment"
+              android:label="Inspections"
+              tools:layout="@layout/inspections_fragment">
+    </fragment>
 
-    <fragment
-            android:id="@+id/preventiveMaintenaceFragment"
-            android:name="com.example.samplelogin.mainmenu.work.preventivemaintenance.PreventiveMaintenanceFragment"
-            android:label="Preventive Maintenance"
-            tools:layout="@layout/preventive_maintenance_fragment"/>
-
-    <fragment
-            android:id="@+id/inspectionsFragment"
-            android:name="com.example.samplelogin.mainmenu.work.inspections.InspectionsFragment"
-            android:label="Inspections"
-            tools:layout="@layout/inspections_fragment"/>
-
-
-
+    <activity android:id="@+id/mainMenuActivity"
+              android:name="com.example.samplelogin.mainmenu.MainMenuActivity"
+              android:label="MainMenuActivity"/>
 
 </navigation>

@@ -24,4 +24,8 @@ class MyWorkActivity : AppCompatActivity() {
 
         NavigationUI.setupActionBarWithNavController(this, navController)
     }
+
+    override fun onNavigateUp(): Boolean {
+        return super.onNavigateUp()
+    }
 }

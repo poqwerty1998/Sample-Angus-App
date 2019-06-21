@@ -20,7 +20,8 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".mainmenu.MainMenuActivity">
+                android:name=".mainmenu.MainMenuActivity"
+                android:parentActivityName=".MainActivity">
         </activity>
         <activity
                 android:name=".mainmenu.create.CreateActivity"
