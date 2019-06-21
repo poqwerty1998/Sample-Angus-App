@@ -1,14 +1,14 @@
 package com.example.samplelogin.mainmenu.work
 
 import android.os.Bundle
-import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.samplelogin.R
 import kotlinx.android.synthetic.main.activity_my_work.*
+import android.view.MenuItem
+
 
 class MyWorkActivity : AppCompatActivity() {
 
@@ -17,19 +17,25 @@ class MyWorkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_work)
+
         setSupportActionBar(toolbar)
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar!!.apply {
+            setDisplayHomeAsUpEnabled(true)
+        }
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-
         bottom_nav.setupWithNavController(navController)
 
-        NavigationUI.setupActionBarWithNavController(this, navController)
-
-
+//        NavigationUI.setupActionBarWithNavController(this, navController)
     }
 
-    override fun onNavigateUp(): Boolean {
-        return super.onNavigateUp()
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            android.R.id.home ->  {
+                finish()
+                return true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }
