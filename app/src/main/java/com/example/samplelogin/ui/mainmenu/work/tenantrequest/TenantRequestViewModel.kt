@@ -1,4 +1,4 @@
-package com.example.samplelogin.mainmenu.work.tenantrequest
+package com.example.samplelogin.ui.mainmenu.work.tenantrequest
 
 import androidx.lifecycle.ViewModel;
 

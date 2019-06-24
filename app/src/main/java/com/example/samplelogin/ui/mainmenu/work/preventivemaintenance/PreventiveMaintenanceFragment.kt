@@ -1,4 +1,4 @@
-package com.example.samplelogin.mainmenu.work.tenantrequest
+package com.example.samplelogin.ui.mainmenu.work.preventivemaintenance
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
@@ -9,24 +9,25 @@ import android.view.ViewGroup
 
 import com.example.samplelogin.R
 
-class TenantRequestFragment : Fragment() {
+class PreventiveMaintenanceFragment : Fragment() {
 
     companion object {
-        fun newInstance() = TenantRequestFragment()
+        fun newInstance() = PreventiveMaintenanceFragment()
     }
 
-    private lateinit var viewModel: TenantRequestViewModel
+    private lateinit var viewModel: PreventiveMaintenanceViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.tenant_request_fragment, container, false)
+
+        return inflater.inflate(R.layout.preventive_maintenance_fragment, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TenantRequestViewModel::class.java)
+        viewModel = ViewModelProviders.of(this).get(PreventiveMaintenanceViewModel::class.java)
         // TODO: Use the ViewModel
     }
 

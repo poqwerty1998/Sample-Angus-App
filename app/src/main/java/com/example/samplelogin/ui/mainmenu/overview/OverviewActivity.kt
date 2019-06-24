@@ -1,4 +1,4 @@
-package com.example.samplelogin.mainmenu.overview
+package com.example.samplelogin.ui.mainmenu.overview
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

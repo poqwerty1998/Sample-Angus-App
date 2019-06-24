@@ -1,4 +1,4 @@
-package com.example.samplelogin
+package com.example.samplelogin.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
-import com.example.samplelogin.mainmenu.MainMenuActivity
+import com.example.samplelogin.R
+import com.example.samplelogin.ui.mainmenu.MainMenuActivity
 
 const val LOGIN_USERNAME = "admin"
 const val LOGIN_PASSWORD = "admin"

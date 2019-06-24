@@ -1,4 +1,4 @@
-package com.example.samplelogin.mainmenu.work.inspections
+package com.example.samplelogin.ui.mainmenu.work.inspections
 
 import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle

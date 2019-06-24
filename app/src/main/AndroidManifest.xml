@@ -12,7 +12,7 @@
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
         <activity
-                android:name=".MainActivity"
+                android:name=".ui.MainActivity"
                 android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -20,23 +20,23 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".mainmenu.MainMenuActivity"
-                android:parentActivityName=".MainActivity">
+                android:name="com.example.samplelogin.ui.mainmenu.MainMenuActivity"
+                android:parentActivityName=".ui.MainActivity">
         </activity>
         <activity
-                android:name=".mainmenu.create.CreateActivity"
-                android:parentActivityName=".mainmenu.MainMenuActivity">
+                android:name="com.example.samplelogin.ui.mainmenu.create.CreateActivity"
+                android:parentActivityName="com.example.samplelogin.ui.mainmenu.MainMenuActivity">
         </activity>
         <activity
-                android:name=".mainmenu.overview.OverviewActivity"
-                android:parentActivityName=".mainmenu.MainMenuActivity">
+                android:name="com.example.samplelogin.ui.mainmenu.overview.OverviewActivity"
+                android:parentActivityName="com.example.samplelogin.ui.mainmenu.MainMenuActivity">
         </activity>
         <activity
-                android:name=".mainmenu.search.SearchActivity"
-                android:parentActivityName=".mainmenu.MainMenuActivity">
+                android:name="com.example.samplelogin.ui.mainmenu.search.SearchActivity"
+                android:parentActivityName="com.example.samplelogin.ui.mainmenu.MainMenuActivity">
         </activity>
         <activity
-                android:name=".mainmenu.work.MyWorkActivity">
+                android:name="com.example.samplelogin.ui.mainmenu.work.MyWorkActivity">
         </activity>
     </application>
 

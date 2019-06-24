@@ -1,4 +1,4 @@
-package com.example.samplelogin.mainmenu.search
+package com.example.samplelogin.ui.mainmenu.search
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
