@@ -1,31 +1,29 @@
-package com.example.samplelogin.ui.mainmenu.work.tenantrequest
+package com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.example.samplelogin.R
-import kotlinx.android.synthetic.main.item_tenant_request.view.*
-import kotlinx.android.synthetic.main.tenant_request_fragment.*
+import kotlinx.android.synthetic.main.item_preventive_maintenance.view.*
 
-class TenantRequestAdapter(
-    //val tenantRequests: List<TenantRequestItem>
-) : RecyclerView.Adapter<TenantRequestAdapter.TenantRequestViewHolder>() {
+class PreventiveMaintenanceAdapter(
+    //val preventiveMaintenanceList: List<PreventiveMaintenanceItem>
+) : RecyclerView.Adapter<PreventiveMaintenanceAdapter.PreventiveMaintenanceViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TenantRequestViewHolder {
-        return TenantRequestViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PreventiveMaintenanceViewHolder {
+        return PreventiveMaintenanceViewHolder(
             LayoutInflater.from(parent.context)
-                .inflate(R.layout.item_tenant_request, parent, false)
+                .inflate(R.layout.item_preventive_maintenance, parent, false)
         )
     }
 
-    //override fun getItemCount() = tenantRequests.size
+    //override fun getItemCount() = preventiveMaintenanceList.size
     override fun getItemCount(): Int {
-        return 3
+        return 10
     }
 
-    override fun onBindViewHolder(holder: TenantRequestViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: PreventiveMaintenanceViewHolder, position: Int) {
         /*val request = tenantRequests[position]
         holder.view.requestDescription.text = request.requestDescription
         holder.view.propertyName.text = request.propertyName
@@ -36,12 +34,12 @@ class TenantRequestAdapter(
         /*Glide.with(holder.view.context) use if the individual items need an image
             .load()*/
 
-        holder.view.requestDescription.text = "dummy description"
+        holder.view.description.text = "dummy description preventive maintenance"
         holder.view.propertyName.text = "sample property"
         holder.view.buildingName.text = "sample building name"
         holder.view.employeeName.text = "sample employee name"
         holder.view.requestId.text = "12345678"
     }
 
-    class TenantRequestViewHolder(var view: View) : RecyclerView.ViewHolder(view)
+    class PreventiveMaintenanceViewHolder(var view: View) : RecyclerView.ViewHolder(view)
 }

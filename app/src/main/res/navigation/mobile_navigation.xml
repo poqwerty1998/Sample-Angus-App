@@ -6,12 +6,12 @@
             app:startDestination="@id/tenantRequestFragment">
 
     <fragment android:id="@+id/tenantRequestFragment"
-              android:name="com.example.samplelogin.ui.mainmenu.work.tenantrequest.TenantRequestFragment"
+              android:name="com.example.samplelogin.ui.mainmenu.work.tenantrequest.list.TenantRequestFragment"
               android:label="Tenant Request"
               tools:layout="@layout/tenant_request_fragment">
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceFragment"
-              android:name="com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.PreventiveMaintenanceFragment"
+              android:name="com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment"
               android:label="Preventive Maintenance"
               tools:layout="@layout/preventive_maintenance_fragment">
     </fragment>

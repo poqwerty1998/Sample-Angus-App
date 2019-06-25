@@ -1,4 +1,4 @@
-package com.example.samplelogin.ui.mainmenu.work.preventivemaintenance
+package com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.list
 
 import androidx.lifecycle.ViewModel;
 

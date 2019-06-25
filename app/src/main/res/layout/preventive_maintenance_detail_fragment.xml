@@ -4,16 +4,11 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment">
+        tools:context=".ui.mainmenu.work.preventivemaintenance.detail.PreventiveMaintenanceDetailFragment">
 
     <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:text="Preventive Maintenance"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/preventiveMaintenanceRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:text="Hello"/>
 
 </FrameLayout>

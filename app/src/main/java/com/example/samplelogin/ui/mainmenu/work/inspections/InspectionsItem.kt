@@ -1,4 +1,3 @@
 package com.example.samplelogin.ui.mainmenu.work.inspections
 
-class InspectionsItem {
-}
+data class InspectionsItem(val field: String)

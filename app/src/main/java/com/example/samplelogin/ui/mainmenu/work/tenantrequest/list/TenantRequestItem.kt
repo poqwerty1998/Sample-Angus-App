@@ -1,4 +1,4 @@
-package com.example.samplelogin.ui.mainmenu.work.tenantrequest
+package com.example.samplelogin.ui.mainmenu.work.tenantrequest.list
 
 data class TenantRequestItem(
     var requestDescription: String,
