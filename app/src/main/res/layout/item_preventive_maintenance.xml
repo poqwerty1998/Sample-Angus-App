@@ -9,6 +9,7 @@
             android:layout_height="match_parent"
             android:minHeight="?listPreferredItemHeightLarge">
         <TextView
+                android:id="@+id/preventiveMaintenanceField"
                 android:text="preventive maintenance list item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

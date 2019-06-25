@@ -16,6 +16,7 @@ class MainMenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main_menu)
     }
 
+
     fun myWork(view: View) {
         val myWorkIntent = Intent(this, MyWorkActivity::class.java)
         startActivity(myWorkIntent)
