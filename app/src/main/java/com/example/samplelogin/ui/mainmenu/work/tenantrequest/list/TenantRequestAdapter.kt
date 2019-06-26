@@ -16,11 +16,11 @@ class TenantRequestAdapter(
         return TenantRequestViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_tenant_request, parent, false)
-                /*.apply {
+                .apply {
                     tenantRequestCardView.setOnClickListener {
-                        tenantRequestViewModel.
+                        tenantRequestViewModel.onRequestClicked(10)
                     }
-                }*/
+                }
         )
     }
 
