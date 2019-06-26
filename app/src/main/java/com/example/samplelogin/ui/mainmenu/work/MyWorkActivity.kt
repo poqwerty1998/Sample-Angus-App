@@ -25,7 +25,7 @@ class MyWorkActivity : AppCompatActivity() {
         supportActionBar!!.title = "My Work"
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        bottom_nav.setupWithNavController(navController)
+        bottom_nav?.setupWithNavController(navController)
 
     }
 

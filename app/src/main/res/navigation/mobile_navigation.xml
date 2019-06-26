@@ -9,6 +9,8 @@
               android:name="com.example.samplelogin.ui.mainmenu.work.tenantrequest.list.TenantRequestFragment"
               android:label="Tenant Request"
               tools:layout="@layout/tenant_request_fragment">
+        <action android:id="@+id/actionToTenantRequestDetail"
+                app:destination="@id/tenantRequestDetailFragment"/>
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceFragment"
               android:name="com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment"
@@ -25,5 +27,11 @@
     <activity android:id="@+id/mainMenuActivity"
               android:name="com.example.samplelogin.ui.mainmenu.MainMenuActivity"
               android:label="MainMenuActivity"/>
+    <fragment android:id="@+id/tenantRequestDetailFragment"
+              android:name="com.example.samplelogin.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment"
+              android:label="tenant_request_detail_fragment"
+              tools:layout="@layout/tenant_request_detail_fragment">
+        <argument android:name="requestDescription" app:argType="string"/>
+    </fragment>
 
 </navigation>

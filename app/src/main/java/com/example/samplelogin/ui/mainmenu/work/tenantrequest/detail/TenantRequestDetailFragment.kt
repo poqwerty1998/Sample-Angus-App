@@ -11,10 +11,6 @@ import com.example.samplelogin.R
 
 class TenantRequestDetailFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = TenantRequestDetailFragment()
-    }
-
     private lateinit var viewModel: TenantRequestDetailViewModel
 
     override fun onCreateView(
@@ -24,10 +20,8 @@ class TenantRequestDetailFragment : Fragment() {
         return inflater.inflate(R.layout.tenant_request_detail_fragment, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(TenantRequestDetailViewModel::class.java)
-        // TODO: Use the ViewModel
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
 }

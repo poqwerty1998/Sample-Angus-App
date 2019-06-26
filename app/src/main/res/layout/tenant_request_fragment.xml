@@ -6,10 +6,11 @@
         android:layout_height="match_parent"
         tools:context=".ui.mainmenu.work.tenantrequest.list.TenantRequestFragment">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Tenant Request"/>
+    <ImageView
+            android:layout_width="334dp"
+            android:layout_height="176dp"
+            android:src="@drawable/angus_logo"
+            android:layout_gravity="center"/>
 
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/tenantRequestRecyclerView"

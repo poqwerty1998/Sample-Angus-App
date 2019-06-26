@@ -9,12 +9,18 @@ import kotlinx.android.synthetic.main.item_tenant_request.view.*
 
 class TenantRequestAdapter(
     //val tenantRequests: List<TenantRequestItem>
+    val tenantRequestViewModel: TenantRequestViewModel
 ) : RecyclerView.Adapter<TenantRequestAdapter.TenantRequestViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TenantRequestViewHolder {
         return TenantRequestViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_tenant_request, parent, false)
+                /*.apply {
+                    tenantRequestCardView.setOnClickListener {
+                        tenantRequestViewModel.
+                    }
+                }*/
         )
     }
 

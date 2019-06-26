@@ -18,6 +18,22 @@
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.5"/>
 
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontalLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.75"/>
+
+    <ImageView
+            android:layout_width="229dp"
+            android:layout_height="100dp"
+            android:src="@drawable/angus_logo"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guidelineHorizontalLogo"/>
+
     <Button
             android:id="@+id/myWorkButton"
             android:text="My Work"

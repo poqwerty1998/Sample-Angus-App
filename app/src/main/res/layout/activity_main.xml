@@ -7,6 +7,29 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineVertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5"/>
+
+    <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35"/>
+
+    <ImageView
+            android:layout_width="208dp"
+            android:layout_height="128dp"
+            android:src="@drawable/angus_logo"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal"/>
+
     <EditText
             android:id="@+id/username"
             android:layout_width="200dp"
