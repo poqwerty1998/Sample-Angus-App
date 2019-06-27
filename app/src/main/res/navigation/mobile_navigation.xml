@@ -16,6 +16,8 @@
               android:name="com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment"
               android:label="Preventive Maintenance"
               tools:layout="@layout/preventive_maintenance_fragment">
+        <action android:id="@+id/actionToPreventiveMaintenanceDetail"
+                app:destination="@id/preventiveMaintenanceDetailFragment"/>
     </fragment>
 
     <fragment android:id="@+id/inspectionsFragment"
@@ -27,11 +29,18 @@
     <activity android:id="@+id/mainMenuActivity"
               android:name="com.example.samplelogin.ui.mainmenu.MainMenuActivity"
               android:label="MainMenuActivity"/>
+
     <fragment android:id="@+id/tenantRequestDetailFragment"
               android:name="com.example.samplelogin.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment"
               android:label="tenant_request_detail_fragment"
               tools:layout="@layout/tenant_request_detail_fragment">
         <argument android:name="requestDescription" app:argType="string"/>
+    </fragment>
+    <fragment android:id="@+id/preventiveMaintenanceDetailFragment"
+              android:name="com.example.samplelogin.ui.mainmenu.work.preventivemaintenance.detail.PreventiveMaintenanceDetailFragment"
+              android:label="preventive_maintenance_detail_fragment"
+              tools:layout="@layout/preventive_maintenance_detail_fragment">
+        <argument android:name="requestDescription" app:argType="string" android:defaultValue="default description"/>
     </fragment>
 
 </navigation>

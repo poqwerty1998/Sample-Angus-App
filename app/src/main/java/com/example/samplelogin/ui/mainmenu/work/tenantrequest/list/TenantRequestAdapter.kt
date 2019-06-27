@@ -3,24 +3,20 @@ package com.example.samplelogin.ui.mainmenu.work.tenantrequest.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.samplelogin.R
 import kotlinx.android.synthetic.main.item_tenant_request.view.*
 
 class TenantRequestAdapter(
     //val tenantRequests: List<TenantRequestItem>
-    val tenantRequestViewModel: TenantRequestViewModel
+    //val tenantRequestViewModel: TenantRequestViewModel
 ) : RecyclerView.Adapter<TenantRequestAdapter.TenantRequestViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TenantRequestViewHolder {
         return TenantRequestViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.item_tenant_request, parent, false)
-                /*.apply {
-                    tenantRequestCardView.setOnClickListener {
-                        tenantRequestViewModel.
-                    }
-                }*/
         )
     }
 
@@ -45,6 +41,9 @@ class TenantRequestAdapter(
         holder.view.buildingName.text = "sample building name"
         holder.view.employeeName.text = "sample employee name"
         holder.view.requestId.text = "12345678"
+        holder.view.tenantRequestCardView.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.tenantRequestDetailFragment)
+        }
     }
 
     class TenantRequestViewHolder(var view: View) : RecyclerView.ViewHolder(view)
