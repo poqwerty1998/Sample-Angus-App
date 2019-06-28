@@ -37,19 +37,6 @@ class TenantRequestFragment : Fragment() {
                 }
             }
         }
-
-        /*tenantRequestCardView.setOnClickListener {
-            *//*val nextAction =
-                TenantRequestFragmentDirections.actionToTenantRequestDetail("tenant request description")*//*
-            Navigation.findNavController(it).navigate(R.id.tenantRequestDetailFragment)
-        }*/
-    }
-
-    private fun showTenantRequestDetail(request: TenantRequestItem, view: View) {
-        val requestId = request.requestId.toString()
-            // pass information to know which item was clicked to show the details of it
-        val detailString = request.requestDescription
-
     }
 
 }

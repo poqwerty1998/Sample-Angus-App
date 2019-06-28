@@ -21,8 +21,8 @@ class MyWorkActivity : AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar!!.apply {
             setDisplayHomeAsUpEnabled(true)
+            setDisplayShowTitleEnabled(false)
         }
-        supportActionBar!!.title = "My Work"
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         bottom_nav?.setupWithNavController(navController)

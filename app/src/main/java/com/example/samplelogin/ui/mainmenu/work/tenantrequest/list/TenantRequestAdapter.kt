@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.samplelogin.R
 import kotlinx.android.synthetic.main.item_tenant_request.view.*
+import kotlinx.android.synthetic.main.tenant_request_detail_fragment.view.*
 
 class TenantRequestAdapter(
     //val tenantRequests: List<TenantRequestItem>

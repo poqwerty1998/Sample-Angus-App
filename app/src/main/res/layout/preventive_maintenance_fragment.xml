@@ -6,12 +6,6 @@
         android:layout_height="match_parent"
         tools:context=".ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment">
 
-    <ImageView
-            android:layout_width="334dp"
-            android:layout_height="176dp"
-            android:src="@drawable/angus_logo"
-            android:layout_gravity="center"/>
-
     <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/preventiveMaintenanceRecyclerView"
             android:layout_width="match_parent"
