@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_search"
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#FFFFFF">
 
@@ -65,7 +67,7 @@
             app:layout_constraintTop_toBottomOf="@id/guidelineHorizontalLogo"/>
 
     <Button
-            android:id="@+id/myWorkButton"
+            android:id="@+id/search_work_orders_button"
             android:text="Work Orders"
             android:layout_width="150dp"
             android:layout_height="150dp"
@@ -77,7 +79,7 @@
     </Button>
 
     <Button
-            android:id="@+id/overviewButton"
+            android:id="@+id/search_directory_button"
             android:text="Directory"
             android:layout_width="150dp"
             android:layout_height="150dp"
