@@ -15,7 +15,7 @@ import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
 @LargeTest
-class HelloWorldEspressoTest {
+class UITesting {
 
     @get:Rule
     val activityRule = ActivityTestRule(MainActivity::class.java)
@@ -66,6 +66,7 @@ class HelloWorldEspressoTest {
             .perform((typeText("admin")), closeSoftKeyboard())
         onView(withId(R.id.loginButton))
             .perform(click())
+
         /*// my work module
         onView(withId(R.id.my_work_button))
             .perform(click())
@@ -79,6 +80,7 @@ class HelloWorldEspressoTest {
             .check(matches(withChild(withId(R.id.inspectionsFragment))))
         onView(withId(R.id.activity_my_work))
             .perform(pressBack())*/
+
         // overview module
         onView(withId(R.id.overview_button))
             .perform(click())
