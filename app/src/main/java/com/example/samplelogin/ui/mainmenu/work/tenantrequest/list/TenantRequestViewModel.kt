@@ -2,7 +2,6 @@ package com.example.samplelogin.ui.mainmenu.work.tenantrequest.list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel;
-import com.example.samplelogin.data.TenantRequestRepository
 import com.shopify.livedataktx.SingleLiveData
 
 class TenantRequestViewModel() : ViewModel() {

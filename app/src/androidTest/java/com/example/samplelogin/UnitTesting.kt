@@ -16,4 +16,17 @@ import org.junit.runner.RunWith
 @RunWith(AndroidJUnit4::class)
 @LargeTest
 class UnitTesting {
+    @Test
+    fun loginFieldsTest() {
+        onView(withId(R.id.username))
+            .perform((typeText("admin")), closeSoftKeyboard())
+        onView(withId(R.id.password))
+            .perform((typeText("admin")), closeSoftKeyboard())
+        // verifying the field to see if it matches, currently only dummy values being used so need to
+        // contact database to do actual verification of login
+        onView(withId(R.id.username))
+            .check(matches(withText("admin")))
+        onView(withId(R.id.password))
+            .check(matches(withText("admin")))
+    }
 }
