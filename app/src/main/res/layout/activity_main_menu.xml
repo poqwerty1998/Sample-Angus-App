@@ -4,7 +4,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent" xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineVertical"
@@ -83,5 +83,19 @@
             app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
             app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal">
     </Button>
+
+    <TextView
+            android:id="@+id/employeeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="250dp"
+            android:textSize="30sp"
+            android:textColor="@color/colorPrimaryDark"
+            tools:text="FirstName, LastName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.483"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

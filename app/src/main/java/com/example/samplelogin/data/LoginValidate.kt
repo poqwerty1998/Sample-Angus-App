@@ -8,9 +8,12 @@ import retrofit2.http.POST
 interface LoginValidate {
 
     @FormUrlEncoded
-    @POST("login")
+    @POST("employeeapi/v1/mobile/login/")
     fun validate(
+        @Field("domain") domain: String,
         @Field("userName") userName: String,
-        @Field("password") password: String
-    ): Call<UserDetails>
+        @Field("password") password: String,
+        @Field("userAgent") userAgent: String,
+        @Field("version") version: String
+    ): Call<LoginResponse>
 }
