@@ -40,10 +40,15 @@ class MainActivity : AppCompatActivity(){
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
-                        val mainMenuIntent = Intent(applicationContext, MainMenuActivity::class.java)
-                        mainMenuIntent.putExtra("loginResponse", loginResponse)
-                        startActivity(mainMenuIntent)
-                        Toast.makeText(applicationContext, "Login success!", Toast.LENGTH_LONG).show()
+                        if(responseBodyError(loginResponse)) {
+                            Toast.makeText(applicationContext,
+                                "Username or password is incorrect.", Toast.LENGTH_LONG).show()
+                        } else {
+                            val mainMenuIntent = Intent(applicationContext, MainMenuActivity::class.java)
+                            mainMenuIntent.putExtra("loginResponse", loginResponse)
+                            startActivity(mainMenuIntent)
+                            Toast.makeText(applicationContext, "Login success!", Toast.LENGTH_LONG).show()
+                        }
                     } else {
                         Toast.makeText(applicationContext,
                             "Something wrong with the server. Please try again later.", Toast.LENGTH_LONG).show()
@@ -57,5 +62,9 @@ class MainActivity : AppCompatActivity(){
             })
         }
 
+    }
+
+    fun responseBodyError(responseBody: LoginResponse?): Boolean {
+        return responseBody?.userName == null
     }
 }

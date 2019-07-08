@@ -3,12 +3,13 @@ package com.example.samplelogin
 import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.*
 import androidx.test.espresso.assertion.ViewAssertions.matches
+import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.runner.AndroidJUnit4
-import androidx.test.espresso.matcher.RootMatchers
 import com.example.samplelogin.ui.MainActivity
+import org.hamcrest.CoreMatchers
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -21,27 +22,15 @@ class UITesting {
     val activityRule = ActivityTestRule(MainActivity::class.java)
 
     @Test
-    fun loginSuccess() {
-        // typing in credentials to log in
-        onView(withId(R.id.username))
-            .perform((typeText("admin")), closeSoftKeyboard())
-        onView(withId(R.id.password))
-            .perform((typeText("admin")), closeSoftKeyboard())
-        onView(withId(R.id.loginButton))
-            .perform(click())
-        // if one of the buttons in the activity is found, login is successful
-        onView(withId(R.id.activity_main_menu))
-            .check(matches(withChild(withId(R.id.my_work_button))))
-    }
-    @Test
     fun mainMenuTest() {
         // typing in credentials to log in
         onView(withId(R.id.username))
-            .perform((typeText("admin")), closeSoftKeyboard())
+            .perform((typeText("nicole")), closeSoftKeyboard())
         onView(withId(R.id.password))
-            .perform((typeText("admin")), closeSoftKeyboard())
+            .perform((typeText("qwerty")), closeSoftKeyboard())
         onView(withId(R.id.loginButton))
             .perform(click())
+        Thread.sleep(2000)
         // if one of the buttons in the activity is found, login is successful
         onView(withId(R.id.activity_main_menu))
             .check(matches(withChild(withId(R.id.my_work_button))))
@@ -61,11 +50,12 @@ class UITesting {
     fun fourModulesTest() {
         // typing in credentials to log in
         onView(withId(R.id.username))
-            .perform((typeText("admin")), closeSoftKeyboard())
+            .perform((typeText("nicole")), closeSoftKeyboard())
         onView(withId(R.id.password))
-            .perform((typeText("admin")), closeSoftKeyboard())
+            .perform((typeText("qwerty")), closeSoftKeyboard())
         onView(withId(R.id.loginButton))
             .perform(click())
+        Thread.sleep(2000)
 
         /*// my work module
         onView(withId(R.id.my_work_button))
@@ -109,15 +99,34 @@ class UITesting {
         onView(withId(R.id.activity_search))
             .perform(pressBack())
     }
-    /*@Test
-    fun loginFailure() {
-        // typing credentials that will not log the user in
+    @Test
+    fun loginSuccess() {
+        // typing in credentials to log in
         onView(withId(R.id.username))
-            .perform((typeText("abc")), closeSoftKeyboard())
+            .perform((typeText("nicole")), closeSoftKeyboard())
         onView(withId(R.id.password))
-            .perform((typeText("abc")), closeSoftKeyboard())
+            .perform((typeText("qwerty")), closeSoftKeyboard())
         onView(withId(R.id.loginButton))
             .perform(click())
-        onView(withText("Username or password is incorrect.")).inRoot(ToastMatcher)
-    }*/             // need to create a custom toast matcher to check for toasts
+        // if one of the buttons in the activity is found, login is successful
+        Thread.sleep(2000)
+        onView(withId(R.id.activity_main_menu))
+            .check(matches(withChild(withId(R.id.my_work_button))))
+    }
+
+    @Test
+    fun loginFailure() {
+        // typing in credentials to log in
+        onView(withId(R.id.username))
+            .perform((typeText("a23rasdf")), closeSoftKeyboard())
+        onView(withId(R.id.password))
+            .perform((typeText("asdfzx34")), closeSoftKeyboard())
+        onView(withId(R.id.loginButton))
+            .perform(click())
+        // if one of the buttons in the activity is found, login is successful
+        Thread.sleep(2000)
+        onView(withText("Username or password is incorrect."))
+            .inRoot(RootMatchers.withDecorView(CoreMatchers.not(CoreMatchers.`is`(activityRule.activity.window.decorView))))
+            .check(matches(isDisplayed()))
+    }
 }
