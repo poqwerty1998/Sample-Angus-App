@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity(){
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
-                        if(responseBodyError(loginResponse)) {
+                        if(responseBodyHasError(loginResponse)) {
                             Toast.makeText(applicationContext,
                                 "Username or password is incorrect.", Toast.LENGTH_LONG).show()
                         } else {
@@ -64,7 +64,7 @@ class MainActivity : AppCompatActivity(){
 
     }
 
-    fun responseBodyError(responseBody: LoginResponse?): Boolean {
+    fun responseBodyHasError(responseBody: LoginResponse?): Boolean {
         return responseBody?.userName == null
     }
 }
