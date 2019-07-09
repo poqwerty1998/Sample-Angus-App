@@ -7,7 +7,7 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.samplelogin.R
-import com.example.samplelogin.data.LoginResponse
+import com.example.samplelogin.data.entity.LoginResponse
 import com.example.samplelogin.data.RetrofitClientInstance
 import com.example.samplelogin.ui.mainmenu.MainMenuActivity
 import retrofit2.Call
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity(){
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {
-            RetrofitClientInstance.retrofitInstance.validate(
+            RetrofitClientInstance.retrofitInstance.validateLogin(
                 domain,
                 username,
                 password,

@@ -3,19 +3,15 @@ package com.example.samplelogin.ui.mainmenu
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentManager
 import com.example.samplelogin.R
-import com.example.samplelogin.data.LoginResponse
+import com.example.samplelogin.data.entity.LoginResponse
 import com.example.samplelogin.ui.MainActivity
 import com.example.samplelogin.ui.mainmenu.create.CreateActivity
 import com.example.samplelogin.ui.mainmenu.overview.OverviewActivity
 import com.example.samplelogin.ui.mainmenu.search.SearchActivity
 import com.example.samplelogin.ui.mainmenu.work.MyWorkActivity
-import com.example.samplelogin.ui.mainmenu.work.tenantrequest.list.TenantRequestFragment
 import kotlinx.android.synthetic.main.activity_main_menu.*
-import java.io.Serializable
 
 const val BACK_STACK_ROOT_TAG = "root_fragment"
 

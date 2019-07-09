@@ -32,7 +32,7 @@ class MyWorkActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             android.R.id.home ->  {
-                finish()
+                onBackPressed()
                 return true
             }
             else -> super.onOptionsItemSelected(item)

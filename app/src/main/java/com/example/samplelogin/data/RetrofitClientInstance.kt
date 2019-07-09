@@ -20,12 +20,12 @@ object RetrofitClientInstance {
         }.build()
 
     // create a retrofit instance only if it is null
-    val retrofitInstance: LoginValidate by lazy {
+    val retrofitInstance: ApiCalls by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-        retrofit.create(LoginValidate::class.java)
+        retrofit.create(ApiCalls::class.java)
     }
 }
