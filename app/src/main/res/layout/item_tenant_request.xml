@@ -14,32 +14,14 @@
             android:layout_height="match_parent"
             android:minHeight="?listPreferredItemHeightLarge">
         <TextView
-                android:id="@+id/requestDescription"
+                android:id="@+id/workOrderTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Request Description"
+                tools:text="WorkOrderTitle"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/buildingName"/>
-
-        <TextView
-                android:id="@+id/propertyName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Property Name"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/requestId"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/employeeName"
         />
-
-        <TextView
-                android:id="@+id/buildingName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Building Name"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/requestDescription"
-                app:layout_constraintBottom_toTopOf="@+id/employeeName"/>
 
         <TextView
                 android:id="@+id/employeeName"
@@ -47,17 +29,28 @@
                 android:layout_height="wrap_content"
                 tools:text="Employee Name"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/buildingName"
-                app:layout_constraintBottom_toTopOf="@+id/requestId"/>
+                app:layout_constraintTop_toBottomOf="@+id/workOrderTitle"
+                app:layout_constraintBottom_toTopOf="@id/employeeId"
+        />
 
         <TextView
-                android:id="@+id/requestId"
+                android:id="@+id/employeeId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Request ID"
+                tools:text="Employee Id"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/employeeName"
-                app:layout_constraintBottom_toTopOf="@+id/propertyName"/>
+                app:layout_constraintBottom_toTopOf="@+id/displayId"/>
+
+        <TextView
+                android:id="@+id/displayId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Display Id"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employeeId"
+                app:layout_constraintBottom_toBottomOf="parent"
+        />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
