@@ -19,13 +19,14 @@ object RetrofitClientInstance {
             chain.proceed(request)
         }.build()
 
+
     // create a retrofit instance only if it is null
-    val retrofitInstance: ApiCalls by lazy {
+    val retrofitInstance: AngusApiService by lazy {
         val retrofit = Retrofit.Builder()
             .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
             .build()
-        retrofit.create(ApiCalls::class.java)
+        retrofit.create(AngusApiService::class.java)
     }
 }

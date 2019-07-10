@@ -5,7 +5,7 @@ import com.example.samplelogin.data.entity.WorkOrderList
 import retrofit2.Call
 import retrofit2.http.*
 
-interface ApiCalls {
+interface AngusApiService {
 
     @FormUrlEncoded
     @POST("employeeapi/v1/mobile/login/")
