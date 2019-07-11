@@ -33,7 +33,6 @@ class MyWorkActivity : AppCompatActivity() {
 
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         bottom_nav?.setupWithNavController(navController)
-
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -44,27 +43,5 @@ class MyWorkActivity : AppCompatActivity() {
             }
             else -> super.onOptionsItemSelected(item)
         }
-    }
-
-    private fun loadworkOrders() {
-        RetrofitClientInstance.retrofitInstance.getWorkOrders("110000005")
-            .enqueue(object : Callback<WorkOrderList> {
-                override fun onFailure(call: Call<WorkOrderList>, t: Throwable) {
-                    Toast.makeText(applicationContext,
-                        "Something wrong with retrieving data from the server.", Toast.LENGTH_LONG).show()
-                }
-
-                override fun onResponse(call: Call<WorkOrderList>, response: Response<WorkOrderList>) {
-                    if(response.isSuccessful) {
-                        val workOrderList = response.body()
-                        val tenantRequestItems: List<TenantRequestItem>
-                    } else {
-                        Toast.makeText(applicationContext,
-                            "Something wrong with retrieving data from the server.", Toast.LENGTH_LONG).show()
-                    }
-                }
-
-            })
-        RetrofitClientInstance.setCredentials("", "")
     }
 }

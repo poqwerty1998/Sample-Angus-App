@@ -48,6 +48,7 @@ class MainActivity : AppCompatActivity(){
                             mainMenuIntent.putExtra("loginResponse", loginResponse)
                             mainMenuIntent.putExtra("username", username)
                             mainMenuIntent.putExtra("password", password)
+                            RetrofitClientInstance.setCredentials(username, password)
 
                             startActivity(mainMenuIntent)
                             Toast.makeText(applicationContext, "Login success!", Toast.LENGTH_LONG).show()

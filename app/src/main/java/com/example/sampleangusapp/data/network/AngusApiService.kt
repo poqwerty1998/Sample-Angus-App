@@ -17,9 +17,9 @@ interface AngusApiService {
         @Field("version") version: String
     ): Call<LoginResponse>
 
-    @FormUrlEncoded
-    @GET("employeeapi/v1/equipment/workorders?equipmentId=1100000005")
+    @GET("employeeapi/v1/equipment/workorders")
     fun getWorkOrders(
+        /*@Header("Authorization") auth: String,*/
         @Query("equipmentId") equipmentId: String
     ): Call<WorkOrderList>
 }

@@ -25,9 +25,6 @@ class MainMenuActivity : AppCompatActivity(), View.OnClickListener{
         // after log in, retrieve the login response that was previously serialized
         val intent = intent
         val loginResponse = intent.getSerializableExtra("loginResponse") as LoginResponse
-        val username = intent.getSerializableExtra("username") as String
-        val password = intent.getSerializableExtra("password") as String
-        RetrofitClientInstance.setCredentials("angusdemo\\$username", password)
         employeeName.text = loginResponse.realName
 
     }
