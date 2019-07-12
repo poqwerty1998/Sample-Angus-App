@@ -21,7 +21,7 @@ class CreateEmergencyFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.create_emergency_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_create_emergency, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -21,7 +21,7 @@ class PreventiveMaintenanceDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.preventive_maintenance_detail_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_preventive_maintenance_detail, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

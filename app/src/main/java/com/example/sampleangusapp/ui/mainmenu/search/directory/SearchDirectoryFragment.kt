@@ -21,7 +21,7 @@ class SearchDirectoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.search_directory_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_search_directory, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

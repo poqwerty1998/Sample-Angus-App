@@ -15,30 +15,31 @@
             android:minHeight="?listPreferredItemHeightLarge">
         <TextView
                 android:id="@+id/workOrderTitle"
+                android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="WorkOrderTitle"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintBottom_toTopOf="@+id/employeeName"
-        />
+                android:layout_marginBottom="2dp"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="2dp"
+                app:layout_constraintVertical_bias="1.0"
+                android:layout_marginStart="30dp" app:layout_constraintStart_toStartOf="parent"/>
 
         <TextView
                 android:id="@+id/employeeName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Employee Name"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/workOrderTitle"
-                app:layout_constraintBottom_toTopOf="@id/employeeId"
-        />
+                app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+                app:layout_constraintBottom_toTopOf="@+id/employeeId"
+                app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"/>
 
         <TextView
                 android:id="@+id/employeeId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Employee Id"
-                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
                 app:layout_constraintTop_toBottomOf="@+id/employeeName"
                 app:layout_constraintBottom_toTopOf="@+id/displayId"/>
 
@@ -47,10 +48,53 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="Display Id"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/employeeId"
+                app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
                 app:layout_constraintBottom_toBottomOf="parent"
-        />
+                app:layout_constraintTop_toBottomOf="@+id/employeeId" android:layout_marginBottom="2dp"/>
+
+        <TextView
+                android:id="@+id/employeeNameText"
+                android:text="Assigned To: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+                app:layout_constraintBottom_toTopOf="@+id/employeeIdText"
+                app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"/>
+
+        <TextView
+                android:id="@+id/employeeIdText"
+                android:text="Employee ID: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employeeNameText"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintVertical_bias="0.552"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+                app:layout_constraintBottom_toTopOf="@+id/displayIdText"/>
+
+        <TextView
+                android:id="@+id/displayIdText"
+                android:text="Work Order ID: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/employeeIdText" android:layout_marginBottom="2dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineHorizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.3"/>
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineVertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.3"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -16,7 +16,6 @@ object RetrofitClientInstance {
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor { chain ->
             val original = chain.request()
-            println("::::::::::::::::::::::::$credentials:::::::::::::::::::::::::")
             val requestBuilder = original.newBuilder()
                 .header("Content-Type", "application/json")
                 .header("Authorization", credentials)
@@ -31,7 +30,6 @@ object RetrofitClientInstance {
                 .header("Authorization", credentials)
                 .build()
         }*/.build()
-
 
     // create a retrofit instance only if it is null
     val retrofitInstance: AngusApiService by lazy {

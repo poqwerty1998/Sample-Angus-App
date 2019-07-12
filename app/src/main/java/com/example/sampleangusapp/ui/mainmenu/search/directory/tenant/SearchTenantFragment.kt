@@ -21,7 +21,7 @@ class SearchTenantFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.search_tenant_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_search_tenant, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -46,8 +46,25 @@ class UITesting {
         onView(withId(R.id.activity_main))
             .check(matches(withChild(withId(R.id.loginButton))))
     }
+
     @Test
-    fun fourModulesTest() {
+    fun myWorkModuleTest() {
+        onView(withId(R.id.username))
+            .perform((typeText("nicole")), closeSoftKeyboard())
+        onView(withId(R.id.password))
+            .perform((typeText("qwerty")), closeSoftKeyboard())
+        onView(withId(R.id.loginButton))
+            .perform(click())
+        Thread.sleep(2000)
+
+        onView(withId(R.id.my_work_button))
+            .perform(click())
+        onView(withId(R.id.tenantRequestRecyclerView))
+            .perform(click())
+    }
+
+    @Test
+    fun overviewModuleTest() {
         // typing in credentials to log in
         onView(withId(R.id.username))
             .perform((typeText("nicole")), closeSoftKeyboard())
@@ -57,50 +74,53 @@ class UITesting {
             .perform(click())
         Thread.sleep(2000)
 
-        /*// my work module
-        onView(withId(R.id.my_work_button))
-            .perform(click())
-        onView(withId(R.id.activity_my_work))
-            .check(matches(withChild(withId(R.id.bottom_nav))))
-        onView(withId(R.id.bottom_nav))
-            .check(matches(withChild(withId(R.id.tenantRequestFragment))))
-        onView(withId(R.id.bottom_nav))
-            .check(matches(withChild(withId(R.id.preventiveMaintenanceFragment))))
-        onView(withId(R.id.bottom_nav))
-            .check(matches(withChild(withId(R.id.inspectionsFragment))))
-        onView(withId(R.id.activity_my_work))
-            .perform(pressBack())*/
-
-        // overview module
         onView(withId(R.id.overview_button))
             .perform(click())
         onView(withId(R.id.activity_overview))
             .check(matches(withChild(withId(R.id.overview_tr_button))))
         onView(withId(R.id.activity_overview))
             .check(matches(withChild(withId(R.id.overview_emergency_button))))
-        onView(withId(R.id.activity_overview))
-            .perform(pressBack())
-        // create module
+    }
+
+    @Test
+    fun createModuleTest() {
+        // typing in credentials to log in
+        onView(withId(R.id.username))
+            .perform((typeText("nicole")), closeSoftKeyboard())
+        onView(withId(R.id.password))
+            .perform((typeText("qwerty")), closeSoftKeyboard())
+        onView(withId(R.id.loginButton))
+            .perform(click())
+        Thread.sleep(2000)
+
         onView(withId(R.id.create_button))
             .perform(click())
         onView(withId(R.id.activity_create))
             .check(matches(withChild(withId(R.id.create_work_order_button))))
         onView(withId(R.id.activity_create))
             .check(matches(withChild(withId(R.id.create_notifications_button))))
-        onView(withId(R.id.activity_create))
-            .perform(pressBack())
-        // search module
+    }
+
+    @Test
+    fun searchModuleTest() {
+        // typing in credentials to log in
+        onView(withId(R.id.username))
+            .perform((typeText("nicole")), closeSoftKeyboard())
+        onView(withId(R.id.password))
+            .perform((typeText("qwerty")), closeSoftKeyboard())
+        onView(withId(R.id.loginButton))
+            .perform(click())
+        Thread.sleep(2000)
+
         onView(withId(R.id.search_button))
             .perform(click())
         onView(withId(R.id.activity_search))
             .check(matches(withChild(withId(R.id.search_work_orders_button))))
         onView(withId(R.id.activity_search))
             .check(matches(withChild(withId(R.id.search_directory_button))))
-        onView(withId(R.id.activity_search))
-            .perform(pressBack())
     }
     @Test
-    fun loginSuccess() {
+    fun loginSuccessTest() {
         // typing in credentials to log in
         onView(withId(R.id.username))
             .perform((typeText("nicole")), closeSoftKeyboard())
@@ -115,7 +135,7 @@ class UITesting {
     }
 
     @Test
-    fun loginFailure() {
+    fun loginFailureTest() {
         // typing in credentials to log in
         onView(withId(R.id.username))
             .perform((typeText("a23rasdf")), closeSoftKeyboard())
@@ -129,4 +149,5 @@ class UITesting {
             .inRoot(RootMatchers.withDecorView(CoreMatchers.not(CoreMatchers.`is`(activityRule.activity.window.decorView))))
             .check(matches(isDisplayed()))
     }
+
 }

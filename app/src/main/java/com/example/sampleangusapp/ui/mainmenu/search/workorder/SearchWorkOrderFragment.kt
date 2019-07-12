@@ -21,7 +21,7 @@ class SearchWorkOrderFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.search_work_order_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_search_work_order, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

@@ -8,14 +8,14 @@
     <fragment android:id="@+id/tenantRequestFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.list.TenantRequestFragment"
               android:label="Tenant Request"
-              tools:layout="@layout/tenant_request_fragment">
+              tools:layout="@layout/fragment_tenant_request">
         <action android:id="@+id/actionToTenantRequestDetail"
                 app:destination="@id/tenantRequestDetailFragment"/>
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment"
               android:label="Preventive Maintenance"
-              tools:layout="@layout/preventive_maintenance_fragment">
+              tools:layout="@layout/fragment_preventive_maintenance">
         <action android:id="@+id/actionToPreventiveMaintenanceDetail"
                 app:destination="@id/preventiveMaintenanceDetailFragment"/>
     </fragment>
@@ -23,7 +23,7 @@
     <fragment android:id="@+id/inspectionsFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.inspections.InspectionsFragment"
               android:label="Inspections"
-              tools:layout="@layout/inspections_fragment">
+              tools:layout="@layout/fragment_inspections">
     </fragment>
 
     <activity android:id="@+id/mainMenuActivity"
@@ -33,13 +33,13 @@
     <fragment android:id="@+id/tenantRequestDetailFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment"
               android:label="tenant_request_detail_fragment"
-              tools:layout="@layout/tenant_request_detail_fragment">
+              tools:layout="@layout/fragment_tenant_request_detail">
         <argument android:name="requestDescription" app:argType="string"/>
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceDetailFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.preventivemaintenance.detail.PreventiveMaintenanceDetailFragment"
               android:label="preventive_maintenance_detail_fragment"
-              tools:layout="@layout/preventive_maintenance_detail_fragment">
+              tools:layout="@layout/fragment_preventive_maintenance_detail">
         <argument android:name="requestDescription" app:argType="string" android:defaultValue="default description"/>
     </fragment>
 

@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.entity.WorkOrder
 import com.example.sampleangusapp.data.entity.WorkOrderList
+import com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment
+import kotlinx.android.synthetic.main.fragment_tenant_request_detail.view.*
 import kotlinx.android.synthetic.main.item_tenant_request.view.*
 
 class TenantRequestAdapter(
-    private val workOrderList: WorkOrderList
+    private val workOrderList: List<WorkOrder>
 ) : RecyclerView.Adapter<TenantRequestAdapter.TenantRequestViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TenantRequestViewHolder {
@@ -20,11 +22,11 @@ class TenantRequestAdapter(
                 .inflate(R.layout.item_tenant_request, parent, false)
         )
     }
-    override fun getItemCount() = workOrderList.workOrders.size
+    override fun getItemCount() = workOrderList.size
 
     override fun onBindViewHolder(holder: TenantRequestViewHolder, position: Int) {
-        val request = workOrderList.workOrders[position]
-        val name = request.assignedToFirstName + request.assignedToLastName
+        val request = workOrderList[position]
+        val name = "${request.assignedToFirstName} ${request.assignedToLastName}"
         /*Glide.with(holder.view.context) use if the individual items need an image
             .load()*/
         holder.view.workOrderTitle.text = request.workOrderTitle

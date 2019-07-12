@@ -8,13 +8,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.example.sampleangusapp.R
 import kotlinx.android.synthetic.main.activity_my_work.*
 import android.view.MenuItem
-import android.widget.Toast
-import com.example.sampleangusapp.data.entity.WorkOrderList
-import com.example.sampleangusapp.data.network.RetrofitClientInstance
-import com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.list.TenantRequestItem
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class MyWorkActivity : AppCompatActivity() {

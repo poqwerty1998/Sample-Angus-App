@@ -21,7 +21,7 @@ class SearchContactFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.search_contact_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_search_contact, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
