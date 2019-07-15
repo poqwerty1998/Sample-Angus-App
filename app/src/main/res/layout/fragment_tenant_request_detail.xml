@@ -13,25 +13,138 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.5"/>
+            app:layout_constraintGuide_percent="0.38"/>
 
     <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineHorizontal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.5"/>
+            app:layout_constraintGuide_percent="0.24"/>
 
     <TextView
-            android:id="@+id/detail"
+            android:id="@+id/status"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Detail for tenant request"
-            android:layout_marginStart="40dp"
+            android:text="request status"
             android:gravity="center"
-            app:layout_constraintBottom_toTopOf="@id/guidelineHorizontal"
-            app:layout_constraintEnd_toStartOf="@id/guidelineVertical"
-            />
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toTopOf="@+id/guidelineHorizontal"/>
+    <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="request title"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"/>
+    <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="request description"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/status"/>
+    <TextView
+            android:id="@+id/estimatedMinutes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="request estimate minutes required"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/description"/>
+
+    <TextView
+            android:id="@+id/employeeAssignedTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="employee assigned to"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/estimatedMinutes"/>
+
+    <TextView
+            android:id="@+id/employeeAssignedToID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="employee ID"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/employeeAssignedTo" android:layout_marginStart="8dp"/>
+
+    <TextView
+            android:id="@+id/workOrderDisplayID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="display ID"
+            android:gravity="center"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/employeeAssignedToID"/>
+
+    <TextView
+            android:id="@+id/requestTitleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request Title: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineHorizontal"/>
+    <TextView
+            android:id="@+id/requestStatusText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/requestTitleText"/>
+    <TextView
+            android:id="@+id/requestDescriptionText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Details: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/requestStatusText"/>
+    <TextView
+            android:id="@+id/minutesEstimatedText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Minutes Estimated: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/requestDescriptionText"/>
+    <TextView
+            android:id="@+id/assignedToText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Assigned To: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/minutesEstimatedText"/>
+    <TextView
+            android:id="@+id/employeeIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Employee ID: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/assignedToText"/>
+    <TextView
+            android:id="@+id/displayIdText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Work Order ID: "
+            android:gravity="center"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineVertical"
+            app:layout_constraintTop_toBottomOf="@+id/employeeIdText"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

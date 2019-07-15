@@ -27,13 +27,26 @@ class TenantRequestAdapter(
     override fun onBindViewHolder(holder: TenantRequestViewHolder, position: Int) {
         val request = workOrderList[position]
         val name = "${request.assignedToFirstName} ${request.assignedToLastName}"
+        val task = request.tasks
         /*Glide.with(holder.view.context) use if the individual items need an image
             .load()*/
         holder.view.workOrderTitle.text = request.workOrderTitle
         holder.view.employeeName.text = name
         holder.view.employeeId.text = request.assignedToEmployeeId.toString()
         holder.view.displayId.text = request.displayId
+        // populate the detail fragment with information when clicked
         holder.view.tenantRequestCardView.setOnClickListener {
+            if(request.workOrderStatus == 1) {
+            TenantRequestDetailFragment.setStatus("Open")
+        } else {
+            TenantRequestDetailFragment.setStatus("Closed")
+        }
+            TenantRequestDetailFragment.setTitle(request.workOrderTitle)
+            TenantRequestDetailFragment.setDescription(task[0].description)
+            TenantRequestDetailFragment.setETA(task[0].minutesEstimated.toString())
+            TenantRequestDetailFragment.setAssignedTo(name)
+            TenantRequestDetailFragment.setEmployeeId(request.assignedToEmployeeId.toString())
+            TenantRequestDetailFragment.setDisplayId(request.displayId)
             Navigation.findNavController(it).navigate(R.id.tenantRequestDetailFragment)
         }
     }

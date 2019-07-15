@@ -10,6 +10,7 @@ import com.example.sampleangusapp.R
 import androidx.fragment.app.Fragment
 import com.example.sampleangusapp.data.entity.WorkOrder
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
+import com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment
 import kotlinx.android.synthetic.main.fragment_tenant_request.*
 import retrofit2.Call
 import retrofit2.Callback
