@@ -138,9 +138,9 @@ class UITesting {
     fun loginFailureTest() {
         // typing in credentials to log in
         onView(withId(R.id.username))
-            .perform((typeText("a23rasdf")), closeSoftKeyboard())
+            .perform((typeText("username")), closeSoftKeyboard())
         onView(withId(R.id.password))
-            .perform((typeText("asdfzx34")), closeSoftKeyboard())
+            .perform((typeText("password")), closeSoftKeyboard())
         onView(withId(R.id.loginButton))
             .perform(click())
         // if one of the buttons in the activity is found, login is successful

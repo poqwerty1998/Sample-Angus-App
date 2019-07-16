@@ -7,9 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.entity.WorkOrder
-import com.example.sampleangusapp.data.entity.WorkOrderList
 import com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment
-import kotlinx.android.synthetic.main.fragment_tenant_request_detail.view.*
 import kotlinx.android.synthetic.main.item_tenant_request.view.*
 
 class TenantRequestAdapter(

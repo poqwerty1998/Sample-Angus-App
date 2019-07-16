@@ -2,7 +2,6 @@ package com.example.sampleangusapp.data.network
 
 import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.entity.WorkOrder
-import com.example.sampleangusapp.data.entity.WorkOrderList
 import retrofit2.Call
 import retrofit2.http.*
 
