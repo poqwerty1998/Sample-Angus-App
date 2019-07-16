@@ -10,18 +10,34 @@ import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(), View.OnClickListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
 
-    fun login(view: View) {
+    override fun onStart() {
+        super.onStart()
+        // clear login fields if user logs out from the app
+        username.text.clear()
+        password.text.clear()
+    }
+
+    override fun onClick(view: View?) {
+        when(view?.id) {
+            R.id.loginButton -> {
+                login(view)
+            }
+        }
+    }
+
+    private fun login(view: View) {
         val username = findViewById<EditText>(R.id.username).text.toString()
         val password = findViewById<EditText>(R.id.password).text.toString()
         val domain = ""

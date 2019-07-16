@@ -7,14 +7,11 @@ import androidx.test.espresso.matcher.RootMatchers
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.filters.LargeTest
 import androidx.test.rule.ActivityTestRule
-import androidx.test.runner.AndroidJUnit4
 import com.example.sampleangusapp.ui.MainActivity
 import org.hamcrest.CoreMatchers
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class)
 @LargeTest
 class UITesting {
 
@@ -119,6 +116,7 @@ class UITesting {
         onView(withId(R.id.activity_search))
             .check(matches(withChild(withId(R.id.search_directory_button))))
     }
+
     @Test
     fun loginSuccessTest() {
         // typing in credentials to log in
