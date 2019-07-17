@@ -40,6 +40,19 @@ class UITesting {
         // press back
         onView(withId(R.id.activity_main_menu))
             .perform(pressBack())
+        // test no
+        onView(withText("No"))
+            .inRoot(RootMatchers.isDialog())
+            .check(matches(isDisplayed()))
+            .perform(click())
+        // press back again
+        onView(withId(R.id.activity_main_menu))
+            .perform(pressBack())
+        // confirm action
+        onView(withText("Yes"))
+            .inRoot(RootMatchers.isDialog())
+            .check(matches(isDisplayed()))
+            .perform(click())
         onView(withId(R.id.activity_main))
             .check(matches(withChild(withId(R.id.loginButton))))
     }

@@ -6,7 +6,9 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.example.sampleangusapp.R
+import com.example.sampleangusapp.data.AppDatabase
 import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
@@ -60,6 +62,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                             Toast.makeText(applicationContext,
                                 "Username or password is incorrect.", Toast.LENGTH_LONG).show()
                         } else {
+                            // put login values in database so the user can login if offline
+                            /*val db
+                                = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "Login")
+                                .build()*/
+
                             val mainMenuIntent = Intent(applicationContext, MainMenuActivity::class.java)
                             // put the fields through so the next activity can retrieve it
                             mainMenuIntent.putExtra("loginResponse", loginResponse)
