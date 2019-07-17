@@ -35,7 +35,6 @@ class TenantRequestFragment : Fragment() {
                     Toast.makeText(activity,
                         "Something wrong with retrieving data from the server.", Toast.LENGTH_LONG).show()
                 }
-
                 override fun onResponse(call: Call<List<WorkOrder>>, response: Response<List<WorkOrder>>) {
                     if(response.isSuccessful) {
                         val workOrderList = response.body()

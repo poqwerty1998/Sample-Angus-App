@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                                 "Username or password is incorrect.", Toast.LENGTH_LONG).show()
                         } else {
                             val mainMenuIntent = Intent(applicationContext, MainMenuActivity::class.java)
+                            // put the fields through so the next activity can retrieve it
                             mainMenuIntent.putExtra("loginResponse", loginResponse)
                             mainMenuIntent.putExtra("username", username)
                             mainMenuIntent.putExtra("password", password)
@@ -78,10 +79,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                     Toast.makeText(applicationContext,
                         "Something wrong with the server. Please try again later.", Toast.LENGTH_LONG).show()
                 }
-
             })
         }
-
     }
 
     fun responseBodyHasError(responseBody: LoginResponse?): Boolean {
