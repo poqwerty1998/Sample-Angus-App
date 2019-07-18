@@ -5,7 +5,6 @@ import androidx.room.Entity
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-@Entity
 data class LoginResponse(
     @SerializedName("CanCloseWorkOrder")
     val canCloseWorkOrder: Int,

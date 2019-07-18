@@ -1,11 +1,12 @@
 package com.example.sampleangusapp.data.entity
 
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-@Entity
+@Entity(tableName = "work_order")
 data class WorkOrder(
     @PrimaryKey(autoGenerate = true)
     val workOrderId: Int,
@@ -31,7 +32,7 @@ data class WorkOrder(
     val priority: Int,
     @SerializedName("ScheduleDate")
     val scheduleDate: String,
-    @SerializedName("Tasks")
+    @Embedded(prefix = "task_")
     val tasks: List<Task>,
     @SerializedName("WorkOrderStatus")
     val workOrderStatus: Int,

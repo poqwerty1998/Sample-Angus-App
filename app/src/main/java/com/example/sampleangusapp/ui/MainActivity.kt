@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.AppDatabase
+import com.example.sampleangusapp.data.entity.LoginDetails
 import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
@@ -48,6 +49,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {
+            // put the entered details in the local db
+            LoginDetails.setDetails(username, password)
+
             RetrofitClientInstance.retrofitInstance.validateLogin(
                 domain,
                 username,
@@ -59,14 +63,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
                         if(responseBodyHasError(loginResponse)) {
+                            val db = AppDatabase.invoke(applicationContext)
+                            db.loginResponseDao().upsert(LoginDetails())
                             Toast.makeText(applicationContext,
                                 "Username or password is incorrect.", Toast.LENGTH_LONG).show()
                         } else {
-                            // put login values in database so the user can login if offline
-                            /*val db
-                                = Room.databaseBuilder(applicationContext, AppDatabase::class.java, "Login")
-                                .build()*/
-
                             val mainMenuIntent = Intent(applicationContext, MainMenuActivity::class.java)
                             // put the fields through so the next activity can retrieve it
                             mainMenuIntent.putExtra("loginResponse", loginResponse)
