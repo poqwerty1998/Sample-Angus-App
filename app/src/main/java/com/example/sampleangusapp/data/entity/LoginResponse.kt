@@ -1,6 +1,8 @@
 package com.example.sampleangusapp.data.entity
 
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
@@ -79,4 +81,4 @@ data class LoginResponse(
     val usesAdmin: Boolean,
     @SerializedName("UsesBillingApproval")
     val usesBillingApproval: Boolean
-) : Serializable
+): Serializable

@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.entity.LoginResponse
+import com.example.sampleangusapp.data.network.AngusApiService
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
@@ -38,20 +39,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     private fun login(view: View) {
+        val intent = Intent(this, MainMenuActivity::class.java)
+        startActivity(intent)
         val username = findViewById<EditText>(R.id.username).text.toString()
         val password = findViewById<EditText>(R.id.password).text.toString()
-        val domain = ""
-        val userAgent = "Postman"
-        val version = "2.23.0.48"
+        AngusApiService.setCredentials(username, password)
+        /*
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {
             RetrofitClientInstance.retrofitInstance.validateLogin(
-                domain,
                 username,
-                password,
-                userAgent,
-                version
+                password
             ).enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                     if (response.isSuccessful) {
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                         "Something wrong with the server. Please try again later.", Toast.LENGTH_LONG).show()
                 }
             })
-        }
+        }*/
     }
 
     fun responseBodyHasError(responseBody: LoginResponse?): Boolean {

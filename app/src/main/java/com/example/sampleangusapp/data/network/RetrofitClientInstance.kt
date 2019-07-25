@@ -1,5 +1,6 @@
 package com.example.sampleangusapp.data.network
 
+import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import okhttp3.Authenticator
 import okhttp3.Credentials
 import okhttp3.OkHttpClient
@@ -34,9 +35,10 @@ object RetrofitClientInstance {
     // create a retrofit instance only if it is null
     val retrofitInstance: AngusApiService by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
             .client(okHttpClient)
+            .baseUrl(BASE_URL)
+            .addCallAdapterFactory(CoroutineCallAdapterFactory())
+            .addConverterFactory(GsonConverterFactory.create())
             .build()
         retrofit.create(AngusApiService::class.java)
     }

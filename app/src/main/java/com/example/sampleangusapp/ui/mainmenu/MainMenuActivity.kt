@@ -21,9 +21,9 @@ class MainMenuActivity : AppCompatActivity(), View.OnClickListener{
         setContentView(R.layout.activity_main_menu)
 
         // after log in, retrieve the login response that was previously serialized
-        val intent = intent
+        /*val intent = intent
         val loginResponse = intent.getSerializableExtra("loginResponse") as LoginResponse
-        employeeName.text = loginResponse.realName
+        employeeName.text = loginResponse.realName*/
 
     }
 

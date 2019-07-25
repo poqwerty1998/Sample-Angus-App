@@ -1,7 +1,14 @@
 package com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.list
 
-import androidx.lifecycle.ViewModel
+import com.example.sampleangusapp.data.repository.AppRepository
+import com.example.sampleangusapp.internal.lazyDeferred
+import com.example.sampleangusapp.ui.base.AppViewModel
 
-class TenantRequestViewModel() : ViewModel() {
-    // TODO: Implement the ViewModel
+class TenantRequestViewModel(
+    private val appRepository: AppRepository
+) : AppViewModel(appRepository) {
+
+    val workOrders by lazyDeferred {
+        appRepository.getWorkOrders(super.equipmentId)
+    }
 }
