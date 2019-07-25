@@ -10,7 +10,8 @@
               android:label="Tenant Request"
               tools:layout="@layout/fragment_tenant_request">
         <action android:id="@+id/actionToTenantRequestDetail"
-                app:destination="@id/tenantRequestDetailFragment"/>
+                app:destination="@id/tenantRequestDetailFragment" app:popUpTo="@+id/tenantRequestFragment"
+        />
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.preventivemaintenance.list.PreventiveMaintenanceFragment"
@@ -34,6 +35,7 @@
               android:name="com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment"
               android:label="tenant_request_detail_fragment"
               tools:layout="@layout/fragment_tenant_request_detail">
+
         <argument android:name="requestDescription" app:argType="string"/>
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceDetailFragment"

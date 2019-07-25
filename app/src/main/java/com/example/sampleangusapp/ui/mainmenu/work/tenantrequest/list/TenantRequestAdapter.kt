@@ -1,3 +1,4 @@
+/*
 package com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.list
 
 import android.view.LayoutInflater
@@ -27,8 +28,10 @@ class TenantRequestAdapter(
         val request = workOrderList[position]
         val name = "${request.assignedToFirstName} ${request.assignedToLastName}"
         val task = request.tasks
-        /*Glide.with(holder.view.context) use if the individual items need an image
-            .load()*/
+        */
+/*Glide.with(holder.view.context) use if the individual items need an image
+            .load()*//*
+
         holder.view.workOrderTitle.text = request.workOrderTitle
         holder.view.employeeName.text = name
         holder.view.employeeId.text = request.assignedToEmployeeId.toString()
@@ -51,4 +54,4 @@ class TenantRequestAdapter(
     }
 
     class TenantRequestViewHolder(var view: View) : RecyclerView.ViewHolder(view)
-}
+}*/

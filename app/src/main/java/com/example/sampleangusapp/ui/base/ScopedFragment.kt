@@ -20,6 +20,7 @@ abstract class ScopedFragment : Fragment(), CoroutineScope {
 
     override fun onDestroy() {
         super.onDestroy()
+        println("failed")
         job.cancel()
     }
 }
