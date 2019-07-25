@@ -6,7 +6,6 @@ import android.view.View
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sampleangusapp.R
-import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.ui.MainActivity
 import com.example.sampleangusapp.ui.mainmenu.create.CreateActivity
 import com.example.sampleangusapp.ui.mainmenu.overview.OverviewActivity

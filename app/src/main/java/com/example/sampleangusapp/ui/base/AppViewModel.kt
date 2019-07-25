@@ -7,4 +7,6 @@ abstract class AppViewModel(
     private val appRepository: AppRepository
 ) : ViewModel() {
     val equipmentId = 1100000005
+
+
 }

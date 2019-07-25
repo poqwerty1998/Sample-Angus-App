@@ -1,6 +1,6 @@
 package com.example.sampleangusapp.data.network
 
-import com.example.sampleangusapp.data.entity.LoginResponse
+/*import com.example.sampleangusapp.data.entity.LoginResponse*/
 import com.example.sampleangusapp.data.entity.WorkOrder
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import kotlinx.coroutines.Deferred
@@ -15,7 +15,7 @@ private const val BASE_URL = "https://dev5.angus-systems.com/"
 
 interface AngusApiService {
     
-    @FormUrlEncoded
+/*    @FormUrlEncoded
     @POST("employeeapi/v1/mobile/login/")
     fun validateLogin(
         @Field("userName") userName: String,
@@ -23,7 +23,7 @@ interface AngusApiService {
         @Field("domain") domain: String = "",
         @Field("userAgent") userAgent: String = "Postman",
         @Field("version") version: String = "2.23.0.48"
-    ): Deferred<LoginResponse>
+    ): Deferred<LoginResponse>*/
 
     @GET("employeeapi/v1/equipment/workorders")
     fun getWorkOrders(

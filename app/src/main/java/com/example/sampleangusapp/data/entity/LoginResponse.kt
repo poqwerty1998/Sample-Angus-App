@@ -1,3 +1,4 @@
+/*
 package com.example.sampleangusapp.data.entity
 
 import com.google.gson.annotations.SerializedName
@@ -78,4 +79,4 @@ data class LoginResponse(
     val usesAdmin: Boolean,
     @SerializedName("UsesBillingApproval")
     val usesBillingApproval: Boolean
-): Serializable
+): Serializable*/

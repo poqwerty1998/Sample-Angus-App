@@ -9,8 +9,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.room.Room
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.AppDatabase
-import com.example.sampleangusapp.data.entity.LoginDetails
-import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.network.AngusApiService
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
@@ -90,7 +88,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         }*/
     }
 
-    fun responseBodyHasError(responseBody: LoginResponse?): Boolean {
+/*    fun responseBodyHasError(responseBody: LoginResponse?): Boolean {
         return responseBody?.userName == null
-    }
+    }*/
 }

@@ -36,6 +36,7 @@
               android:label="tenant_request_detail_fragment"
               tools:layout="@layout/fragment_tenant_request_detail">
 
+
         <argument android:name="requestDescription" app:argType="string"/>
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceDetailFragment"
