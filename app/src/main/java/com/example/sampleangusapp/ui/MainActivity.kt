@@ -6,7 +6,10 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.room.Room
 import com.example.sampleangusapp.R
+import com.example.sampleangusapp.data.AppDatabase
+import com.example.sampleangusapp.data.entity.LoginDetails
 import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.network.AngusApiService
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
@@ -48,6 +51,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {
+            // put the entered details in the local db
+            LoginDetails.setDetails(username, password)
+
             RetrofitClientInstance.retrofitInstance.validateLogin(
                 username,
                 password
@@ -56,6 +62,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
                         if(responseBodyHasError(loginResponse)) {
+                            val db = AppDatabase.invoke(applicationContext)
+                            db.loginResponseDao().upsert(LoginDetails())
                             Toast.makeText(applicationContext,
                                 "Username or password is incorrect.", Toast.LENGTH_LONG).show()
                         } else {

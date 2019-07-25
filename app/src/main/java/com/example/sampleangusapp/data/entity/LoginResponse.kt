@@ -2,7 +2,10 @@ package com.example.sampleangusapp.data.entity
 
 
 import androidx.room.Entity
+<<<<<<< HEAD
 import androidx.room.PrimaryKey
+=======
+>>>>>>> 68666f1a56caa5296fa424042cbab179da300583
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
