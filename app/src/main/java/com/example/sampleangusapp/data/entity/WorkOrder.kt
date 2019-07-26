@@ -1,15 +1,11 @@
 package com.example.sampleangusapp.data.entity
 
-
-import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-private const val WORK_ORDER_ID = 1100000005
-
-@Entity(tableName = "work_order", indices = [Index(value = ["displayId"], unique = true)])
+@Entity(tableName = "work_order", indices = [Index(value = ["workOrderId"], unique = true)])
 data class WorkOrder(
     @SerializedName("AssignedToEmployeeId")
     val assignedToEmployeeId: Int,
@@ -40,6 +36,6 @@ data class WorkOrder(
     @SerializedName("WorkOrderType")
     val workOrderType: Int
 ) {
-    @PrimaryKey(autoGenerate = false)
-    var workOrderId: Int = WORK_ORDER_ID
+    @PrimaryKey(autoGenerate = true)
+    var workOrderId: Int? = null
 }

@@ -10,6 +10,7 @@ import com.example.sampleangusapp.R
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.Navigation
 import com.example.sampleangusapp.data.entity.WorkOrder
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.ui.base.ScopedFragment
@@ -75,20 +76,17 @@ class TenantRequestFragment : ScopedFragment(), KodeinAware {
             adapter = groupAdapter
         }
 
-        /*groupAdapter.setOnItemClickListener { item, view ->
-            *//*if(request.workOrderStatus == 1) {
-                TenantRequestDetailFragment.setStatus("Open")
-            } else {
-                TenantRequestDetailFragment.setStatus("Closed")
+        groupAdapter.setOnItemClickListener { item, view ->
+            (item as? TenantRequestItem)?.let {
+                showTenantRequestDetail(view)
             }
-            TenantRequestDetailFragment.setTitle(request.workOrderTitle)
-            TenantRequestDetailFragment.setDescription(task[0].description)
-            TenantRequestDetailFragment.setETA(task[0].minutesEstimated.toString())
-            TenantRequestDetailFragment.setAssignedTo(name)
-            TenantRequestDetailFragment.setEmployeeId(request.assignedToEmployeeId.toString())
-            TenantRequestDetailFragment.setDisplayId(request.displayId)
-            Navigation.findNavController(it).navigate(R.id.tenantRequestDetailFragment)*//*
-        }*/
+        }
+    }
+
+    private fun showTenantRequestDetail(view: View) {
+        val actionDetail =
+            TenantRequestFragmentDirections.actionToTenantRequestDetail("abc")
+        Navigation.findNavController(view).navigate(actionDetail)
     }
 
 }

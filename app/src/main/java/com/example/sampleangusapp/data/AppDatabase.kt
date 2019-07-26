@@ -4,15 +4,18 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
 /*import com.example.sampleangusapp.data.entity.LoginResponse*/
 import com.example.sampleangusapp.data.entity.WorkOrder
 
 @Database(
     entities = [WorkOrder::class],
     version = 1)
+@TypeConverters(LocalDateConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 /*    abstract fun loginResponseDao(): LoginResponseDao*/
     abstract fun workOrderDao(): WorkOrderDao
+
     companion object {
         @Volatile private var instance: AppDatabase? = null
         private val LOCK = Any()
@@ -23,7 +26,6 @@ abstract class AppDatabase : RoomDatabase() {
 
         private fun buildDatabase(context: Context) =
                 Room.databaseBuilder(context.applicationContext,
-
                     AppDatabase::class.java, "appDatabaseEntries.db")
                     .build()
     }

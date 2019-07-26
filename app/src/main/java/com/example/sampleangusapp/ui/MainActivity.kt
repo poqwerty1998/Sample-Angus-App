@@ -40,15 +40,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
     }
 
     private fun login(view: View) {
-        val intent = Intent(this, MainMenuActivity::class.java)
-        startActivity(intent)
         val username = findViewById<EditText>(R.id.username).text.toString()
         val password = findViewById<EditText>(R.id.password).text.toString()
         AngusApiService.setCredentials(username, password)
-        /*
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {
+            val intent = Intent(this, MainMenuActivity::class.java)
+            startActivity(intent)
+        }/*else {
             // put the entered details in the local db
             LoginDetails.setDetails(username, password)
 
