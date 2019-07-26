@@ -35,9 +35,7 @@
               android:name="com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailFragment"
               android:label="tenant_request_detail_fragment"
               tools:layout="@layout/fragment_tenant_request_detail">
-
-
-        <argument android:name="requestDescription" app:argType="string"/>
+        <argument android:name="id" app:argType="integer"/>
     </fragment>
     <fragment android:id="@+id/preventiveMaintenanceDetailFragment"
               android:name="com.example.sampleangusapp.ui.mainmenu.work.preventivemaintenance.detail.PreventiveMaintenanceDetailFragment"

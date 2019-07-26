@@ -13,6 +13,9 @@ interface WorkOrderDao {
     @Query("select * from work_order")
     fun getWorkOrders(): LiveData<List<WorkOrder>>
 
+    @Query("select * from work_order where workOrderId = :id")
+    fun getWorkOrder(id: Int): LiveData<WorkOrder>
+
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(workOrders: List<WorkOrder>)
 

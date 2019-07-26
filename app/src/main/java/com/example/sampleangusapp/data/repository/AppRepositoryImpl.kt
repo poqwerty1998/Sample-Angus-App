@@ -16,6 +16,12 @@ class AppRepositoryImpl(
     private val workOrderDao: WorkOrderDao,
     private val appNetworkDataSource: AppNetworkDataSource
 ) : AppRepository {
+    override suspend fun getWorkOrder(id: Int): LiveData<WorkOrder> {
+        return withContext(Dispatchers.IO) {
+            initAppData()
+            return@withContext workOrderDao.getWorkOrder(id)
+        }
+    }
 
     init {
         appNetworkDataSource.apply {

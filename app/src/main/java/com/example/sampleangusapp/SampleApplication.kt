@@ -5,15 +5,13 @@ import com.example.sampleangusapp.data.AppDatabase
 import com.example.sampleangusapp.data.network.*
 import com.example.sampleangusapp.data.repository.AppRepository
 import com.example.sampleangusapp.data.repository.AppRepositoryImpl
+import com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.detail.TenantRequestDetailViewModelFactory
 import com.example.sampleangusapp.ui.mainmenu.work.tenantrequest.list.TenantRequestViewModelFactory
 import com.jakewharton.threetenabp.AndroidThreeTen
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
-import org.kodein.di.generic.bind
-import org.kodein.di.generic.instance
-import org.kodein.di.generic.provider
-import org.kodein.di.generic.singleton
+import org.kodein.di.generic.*
 
 class SampleApplication : Application(), KodeinAware {
     override val kodein = Kodein.lazy {
@@ -26,6 +24,7 @@ class SampleApplication : Application(), KodeinAware {
         bind<AppNetworkDataSource>() with singleton { AppNetworkDataSourceImpl(instance())}
         bind<AppRepository>() with singleton { AppRepositoryImpl(instance(), instance()) }
         bind() from provider { TenantRequestViewModelFactory(instance()) }
+        bind() from factory { workOrderId: Int -> TenantRequestDetailViewModelFactory(workOrderId, instance()) }
 
     }
 

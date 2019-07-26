@@ -1,5 +1,6 @@
 package com.example.sampleangusapp.data.entity
 
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.Index
 import androidx.room.PrimaryKey
