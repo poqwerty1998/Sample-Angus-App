@@ -1,4 +1,3 @@
-/*
 package com.example.sampleangusapp.data
 
 import androidx.lifecycle.LiveData
@@ -19,4 +18,4 @@ interface LoginResponseDao {
 
     @Query("delete from login_details")
     fun deleteLoginDetail(username: String)
-}*/
+}

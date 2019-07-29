@@ -6,16 +6,13 @@ import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.room.Room
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.AppDatabase
 import com.example.sampleangusapp.data.network.AngusApiService
-import com.example.sampleangusapp.data.network.RetrofitClientInstance
+import com.example.sampleangusapp.data.repository.AppRepository
+import com.example.sampleangusapp.internal.lazyDeferred
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -43,6 +40,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         val username = findViewById<EditText>(R.id.username).text.toString()
         val password = findViewById<EditText>(R.id.password).text.toString()
         AngusApiService.setCredentials(username, password)
+
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {

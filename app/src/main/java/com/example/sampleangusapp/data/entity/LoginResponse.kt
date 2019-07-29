@@ -1,9 +1,11 @@
-/*
 package com.example.sampleangusapp.data.entity
 
+import androidx.room.Entity
+import androidx.room.Index
+import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
-import java.io.Serializable
 
+@Entity(tableName = "login_response", indices = [Index(value = ["employeeID"])])
 data class LoginResponse(
     @SerializedName("CanCloseWorkOrder")
     val canCloseWorkOrder: Int,
@@ -27,6 +29,7 @@ data class LoginResponse(
     val companyUsesGeodispatch: Boolean,
     @SerializedName("Domain")
     val domain: String,
+    @PrimaryKey
     @SerializedName("EmployeeID")
     val employeeID: Int,
     @SerializedName("HasVendorCOI")
@@ -79,4 +82,6 @@ data class LoginResponse(
     val usesAdmin: Boolean,
     @SerializedName("UsesBillingApproval")
     val usesBillingApproval: Boolean
-): Serializable*/
+) {
+
+}
