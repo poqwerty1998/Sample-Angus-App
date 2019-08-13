@@ -34,7 +34,7 @@ class UnitTesting {
             override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
                 if (response.isSuccessful) {
                     val loginResponse = response.body()
-                    // insert assert here
+                    // check if some fields in the object returned are as expected
                     assertEquals(loginResponse?.userName, "nicole")
                     assertEquals(loginResponse?.realName, "Nicole ahadi")
                     assertEquals(loginResponse?.employeeID, 1100000003)
