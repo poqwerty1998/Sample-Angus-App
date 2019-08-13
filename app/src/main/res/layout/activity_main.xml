@@ -52,7 +52,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="Password"
-            android:inputType="" android:password="true"
+            android:inputType="textPassword"
             android:layout_marginLeft="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"

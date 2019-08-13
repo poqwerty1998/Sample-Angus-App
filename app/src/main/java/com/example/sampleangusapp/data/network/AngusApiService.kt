@@ -8,6 +8,7 @@ import kotlinx.coroutines.Deferred
 import okhttp3.Credentials
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
+import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
@@ -24,7 +25,7 @@ interface AngusApiService {
         @Field("domain") domain: String = "",
         @Field("userAgent") userAgent: String = "Postman",
         @Field("version") version: String = "2.23.0.48"
-    ): Deferred<LoginResponse>
+    ): Call<LoginResponse>
 
     @GET("employeeapi/v1/equipment/workorders")
     fun getWorkOrders(

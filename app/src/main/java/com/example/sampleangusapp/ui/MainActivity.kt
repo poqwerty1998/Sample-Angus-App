@@ -8,11 +8,17 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.sampleangusapp.R
 import com.example.sampleangusapp.data.AppDatabase
+import com.example.sampleangusapp.data.entity.LoginDetails
+import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.network.AngusApiService
+import com.example.sampleangusapp.data.network.RetrofitClientInstance
 import com.example.sampleangusapp.data.repository.AppRepository
 import com.example.sampleangusapp.internal.lazyDeferred
 import com.example.sampleangusapp.ui.mainmenu.MainMenuActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class MainActivity : AppCompatActivity(), View.OnClickListener{
 
@@ -40,16 +46,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
         val username = findViewById<EditText>(R.id.username).text.toString()
         val password = findViewById<EditText>(R.id.password).text.toString()
         AngusApiService.setCredentials(username, password)
-
         if (username.isEmpty() || password.isEmpty()) {
             Toast.makeText(this, "Username or password is empty.", Toast.LENGTH_LONG).show()
         } else {
-            val intent = Intent(this, MainMenuActivity::class.java)
-            startActivity(intent)
-        }/*else {
             // put the entered details in the local db
-            LoginDetails.setDetails(username, password)
-
+            /*LoginDetails.setDetails(username, password)*/
             RetrofitClientInstance.retrofitInstance.validateLogin(
                 username,
                 password
@@ -58,8 +59,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                     if (response.isSuccessful) {
                         val loginResponse = response.body()
                         if(responseBodyHasError(loginResponse)) {
-                            val db = AppDatabase.invoke(applicationContext)
-                            db.loginResponseDao().upsert(LoginDetails())
+                            /*val db = AppDatabase.invoke(applicationContext)
+                            db.loginResponseDao().upsert(LoginDetails())*/
                             Toast.makeText(applicationContext,
                                 "Username or password is incorrect.", Toast.LENGTH_LONG).show()
                         } else {
@@ -83,10 +84,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener{
                         "Something wrong with the server. Please try again later.", Toast.LENGTH_LONG).show()
                 }
             })
-        }*/
+        }
     }
 
-/*    fun responseBodyHasError(responseBody: LoginResponse?): Boolean {
+    fun responseBodyHasError(responseBody: LoginResponse?): Boolean {
         return responseBody?.userName == null
-    }*/
+    }
 }

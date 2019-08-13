@@ -4,6 +4,7 @@ import androidx.test.filters.LargeTest
 import com.example.sampleangusapp.data.entity.LoginResponse
 import com.example.sampleangusapp.data.entity.WorkOrder
 import com.example.sampleangusapp.data.network.RetrofitClientInstance
+import kotlinx.coroutines.runBlocking
 import org.junit.Test
 import org.junit.Assert.assertEquals
 import retrofit2.Call
@@ -72,41 +73,26 @@ class UnitTesting {
     // retrofit client get request
     @Test
     fun getTenantRequestsPass() {
-        RetrofitClientInstance.setCredentials("nicole", "qwerty")
-        RetrofitClientInstance.retrofitInstance.getWorkOrders("1100000005")
-            .enqueue(object : Callback<List<WorkOrder>> {
-                override fun onFailure(call: Call<List<WorkOrder>>, t: Throwable) {
-                }
-
-                override fun onResponse(call: Call<List<WorkOrder>>, response: Response<List<WorkOrder>>) {
-                    val workOrderList = response.body()
-                    val workOrder = workOrderList!![0]
-                    assertEquals(workOrder.id, 22702152)
-                    assertEquals(workOrder.workOrderTitle, "Boiler General Maintenance")
-                    assertEquals(workOrder.assignedToEmployeeId, 311)
-                    assertEquals(workOrder.assignedToFirstName, "Max")
-                    assertEquals(workOrder.assignedToLastName, "Power")
-                }
-
-            })
+        runBlocking {
+            RetrofitClientInstance.setCredentials("nicole", "qwerty")
+            val workOrderList = RetrofitClientInstance.retrofitInstance.getWorkOrders(1100000005).await()
+            val workOrder = workOrderList[0]
+            assertEquals(workOrder.id, 22702152)
+            assertEquals(workOrder.workOrderTitle, "Boiler General Maintenance")
+            assertEquals(workOrder.assignedToEmployeeId, 311)
+            assertEquals(workOrder.assignedToFirstName, "Max")
+            assertEquals(workOrder.assignedToLastName, "Power")
+        }
     }
 
     // retrofit client get request
     @Test
     fun getTenantRequestsFail() {
-        RetrofitClientInstance.setCredentials("username", "password")
-        RetrofitClientInstance.retrofitInstance.getWorkOrders("1100000005")
-            .enqueue(object : Callback<List<WorkOrder>> {
-                override fun onFailure(call: Call<List<WorkOrder>>, t: Throwable) {
-                }
-
-                override fun onResponse(call: Call<List<WorkOrder>>, response: Response<List<WorkOrder>>) {
-                    val workOrderList = response.body()
-                    // wrong validation will return a null response body
-                    assertEquals(workOrderList, null)
-                }
-
-            })
+        runBlocking {
+            RetrofitClientInstance.setCredentials("username", "password")
+            val workOrderList = RetrofitClientInstance.retrofitInstance.getWorkOrders(1100000005).await()
+            assertEquals(workOrderList, null)
+        }
     }
 
     // api service
